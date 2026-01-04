@@ -1,0 +1,253 @@
+/* ================== GENERAL ================== */
+body {
+  font-family: Arial, Helvetica, sans-serif;
+  margin: 0;
+  padding: 0;
+  background: #f5f5f5;
+  color: #333;
+}
+
+h1 {
+  margin-bottom: 15px;
+}
+
+button {
+  cursor: pointer;
+  padding: 6px 10px;
+  border: none;
+  background: #0077cc;
+  color: white;
+  border-radius: 4px;
+}
+
+/* ================== SEARCH BAR ================== */
+.search-form {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(120px, 1fr));
+  gap: 10px;
+  margin-bottom: 20px;
+}
+
+.search-form input,
+.search-form select {
+  padding: 6px 8px;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  width: 100%;
+  box-sizing: border-box;
+}
+
+/* ================== PAGE LAYOUT ================== */
+.page {
+  padding: 20px;
+}
+
+.layout {
+  display: flex;
+  gap: 20px;
+  flex-wrap: wrap;
+}
+
+/* ================== RESULTS GRID ================== */
+.results {
+  flex: 3;
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  gap: 20px;
+}
+
+/* ================== PROPERTY CARD ================== */
+.property-card {
+  background-color: #fff;
+  border-radius: 12px;
+  padding: 12px;
+  box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+  display: flex;
+  flex-direction: column;
+  min-height: 360px;
+  position: relative; /* for favourite button */
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.property-card:hover {
+  transform: translateY(-5px) scale(1.02);
+  box-shadow: 0 10px 20px rgba(0,0,0,0.2);
+}
+
+/* ================== CARD IMAGE ================== */
+.property-image {
+  width: 100%;
+  height: 200px;
+  object-fit: cover;
+  border-radius: 10px;
+  transition: transform 0.3s ease;
+}
+
+.property-card:hover .property-image {
+  transform: scale(1.05);
+}
+
+/* ================== CARD CONTENT ================== */
+.property-card h3 {
+  margin: 10px 0 5px;
+  font-size: 18px;
+}
+
+.property-card p {
+  margin: 4px 0;
+  font-size: 14px;
+  flex-grow: 1;
+}
+
+/* ================== CARD ACTIONS ================== */
+.card-actions {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-top: 10px;
+}
+
+.card-actions a {
+  text-decoration: none;
+  background: #0077cc;
+  color: white;
+  padding: 6px 12px;
+  border-radius: 6px;
+}
+
+.card-actions a:hover {
+  background: #005fa3;
+}
+
+/* ================== FAVOURITE BUTTON ================== */
+.favourite-btn {
+  position: absolute;
+  bottom: 12px;
+  right: 12px;
+  width: 45px;
+  height: 45px;
+  border-radius: 50%;
+  font-size: 22px;
+  background: #ffffff;
+  color: white;
+  border: none;
+  cursor: pointer;
+}
+
+/* ================== FAVOURITES SIDEBAR ================== */
+.favourites {
+  flex: 1;
+  background: white;
+  padding: 10px;
+  border-radius: 6px;
+  box-shadow: 0 0 6px rgba(0,0,0,0.1);
+}
+
+.favourites h3 {
+  margin-top: 0;
+}
+
+.favourites div {
+  display: flex;
+  justify-content: space-between;
+  margin-bottom: 6px;
+}
+
+/* ================== PROPERTY PAGE ================== */
+.property-page {
+  max-width: 1000px;
+  margin: auto;
+  padding: 20px;
+  background: white;
+  border-radius: 12px;
+  position: relative; /* for favourite button */
+}
+
+.property-page h1 {
+  margin-bottom: 15px;
+}
+
+.price {
+  font-size: 24px;
+  font-weight: bold;
+  margin: 15px 0;
+}
+
+.section {
+  margin-top: 30px;
+}
+
+.section h2 {
+  margin-bottom: 10px;
+  border-bottom: 2px solid #eee;
+  padding-bottom: 5px;
+}
+
+.description {
+  line-height: 1.6;
+}
+
+/* ================== FLOOR PLAN ================== */
+.floor-plan {
+  width: 100%;
+  max-width: 500px;
+  border-radius: 8px;
+  margin-top: 10px;
+}
+
+/* ================== PROPERTY GALLERY ================== */
+.main-image {
+  width: 100%;
+  max-height: 500px;
+  object-fit: cover;
+  border-radius: 10px;
+  box-shadow: 0 8px 20px rgba(0,0,0,0.15);
+  margin-bottom: 12px;
+}
+
+.gallery {
+  display: flex;
+  gap: 12px;
+  overflow-x: auto;
+  padding-bottom: 10px;
+}
+
+.gallery-image {
+  width: 150px;
+  height: 100px;
+  object-fit: cover;
+  border-radius: 8px;
+  cursor: pointer;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.gallery-image:hover {
+  transform: scale(1.05);
+  box-shadow: 0 8px 20px rgba(0,0,0,0.25);
+}
+
+/* ================== RESPONSIVE ================== */
+@media (max-width: 1024px) {
+  .layout {
+    flex-direction: column;
+  }
+
+  .results {
+    grid-template-columns: 1fr;
+  }
+
+  .search-form {
+    grid-template-columns: 1fr;
+  }
+}
+
+@media (max-width: 600px) {
+  .property-image {
+    height: 160px;
+  }
+
+  .gallery-image {
+    width: 120px;
+    height: 80px;
+  }
+}
